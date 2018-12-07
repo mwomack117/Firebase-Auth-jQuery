@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Firebase Auth jQuery</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div style="margin-top: 1vh"><img src="images/firebase-image.png"></div>
+        <div style="margin-top: 3vh"><img src="images/jQuery.png"></div>
+    </div>
+
+    <!-- Authentication -->
+    <div class="dashed-container">
+        <div class="cut-sentence">
+            <i class="fa fa-hand-scissors"></i> cut and use in your program
+            <span class="orange-words">Authentication</span>
+        </div>
+
+        <form id="sign-up-form">
+            <h2>Sign up form</h2>
+            <input type="email" id="sign-up-email" placeholder="Email" required>
+            <input type="password" id="sign-up-password" placeholder="Password" required>
+            <button type="submit" id="sign-up-button">Sign up</button>
+        </form>
+
+        <button type="button" id="log-out-button">Logout</button>
+
+        <form id="login-form">
+            <h2>Log in form</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit" id="login-button">Log In</button>
+        </form>
+        <!-- Errors -->
+        <div id="errors"></div>
+
+    </div>
+
+    <!-- Status -->
+    <div id="status"></div>
+
+    <!-- Authorization -->
+    <div class="dashed-container">
+        <div class="cut-sentence">
+            <i class="fa fa-hand-scissors"></i> cut and use in your program
+            <span class="orange-words">Authorization</span>
+        </div>
+
+        <form id="add-item-form">
+            <h2>To do list</h2>
+            <input type="text" id="item" required>
+            <button type="submit">Add item</button>
+        </form>
+
+        <div id="to-do-list-items">
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+<!-- Styles -->
+<style media="screen">
+    body {
+        font-family: 'Open Sans', sans-serif;
+        margin: 3vh 50px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    input {
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    /* a:hover {
+        cursor: pointer;
+    } */
+    #status {
+        color: #ccc;
+        font-size: 2em;
+        text-align: center;
+        vertical-align: middle;
+        margin-bottom: 8vh;
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 800px;
+        grid-column-gap: 40px;
+        margin: auto;
+    }
+
+    .header div {
+        width: 200px;
+        margin: auto;
+    }
+
+    .dashed-container {
+        margin: auto;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        border: 1px dashed #ccc;
+        padding: 20px;
+        position: relative;
+        max-width: 800px;
+    }
+
+    .cut-sentence {
+        position: absolute;
+        display: block;
+        top: -10px;
+        background-color: #fff;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .orange-words {
+        color: orange;
+        margin-left: 20px;
+        font-style: italic;
+    }
+
+    .delete-button {
+        margin-left: 20px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .fa-hand-scissors {
+        margin-right: 10px;
+    }
+
+    #errors {
+        margin-top: 15px;
+        color: red;
+    }
+</style>
